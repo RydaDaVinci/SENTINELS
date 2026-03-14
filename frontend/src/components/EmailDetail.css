@@ -1,0 +1,701 @@
+.email-detail-page {
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.back-btn {
+  margin: 20px 0;
+}
+
+.email-detail-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.email-header-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.email-title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.email-title {
+  color: var(--dark-purple);
+  font-size: 24px;
+  margin: 0;
+  flex: 1;
+}
+
+.risk-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.risk-badge.risk-LOW {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.risk-badge.risk-MEDIUM {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.risk-badge.risk-HIGH {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.email-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  background: var(--light-gray);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.meta-item {
+  display: flex;
+  gap: 10px;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: var(--dark-purple);
+  min-width: 80px;
+}
+
+.meta-value {
+  color: var(--gray);
+  word-break: break-word;
+}
+
+.prediction-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.prediction-section h2 {
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+}
+
+.ensemble-prediction {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.ensemble-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ensemble-header h3 {
+  color: var(--dark-purple);
+  margin: 0;
+}
+
+.agreement-badge {
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.agreement-badge.agreement-ALL_AGREE_THREAT,
+.agreement-badge.agreement-ALL_AGREE_SAFE {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.agreement-badge.agreement-MAJORITY_THREAT,
+.agreement-badge.agreement-MAJORITY_SAFE {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.agreement-badge.agreement-SPLIT {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.ensemble-probability {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.probability-meter {
+  flex: 2;
+  height: 30px;
+  background-color: #e9ecef;
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.probability-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.probability-fill.risk-LOW {
+  background-color: var(--success);
+}
+
+.probability-fill.risk-MEDIUM {
+  background-color: var(--warning);
+}
+
+.probability-fill.risk-HIGH {
+  background-color: var(--danger);
+}
+
+.probability-value {
+  flex: 1;
+  text-align: center;
+  min-width: 150px;
+}
+
+.probability-value .value {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--dark-purple);
+  line-height: 1.2;
+}
+
+.probability-value .label {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.model-predictions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.model-prediction-card {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.model-prediction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.model-prediction-card h4 {
+  color: var(--primary-purple);
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.model-risk-indicator {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.model-risk-indicator.risk-LOW {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.model-risk-indicator.risk-MEDIUM {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.model-risk-indicator.risk-HIGH {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.model-probability {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--dark-purple);
+  margin-bottom: 5px;
+}
+
+.model-vote {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.email-content-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.email-content-section h2 {
+  color: var(--primary-purple);
+  margin-bottom: 15px;
+}
+
+.email-body {
+  background: var(--light-gray);
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.email-body pre {
+  font-family: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.no-content {
+  color: var(--gray);
+  text-align: center;
+  padding: 40px;
+  margin: 0;
+}
+
+.features-section {
+  margin-top: 20px;
+}
+
+.toggle-features {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-category {
+  background: var(--light-gray);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.feature-category h4 {
+  color: var(--primary-purple);
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 10px;
+}
+
+.feature-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.feature-table td {
+  padding: 8px 5px;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 13px;
+}
+
+.feature-table td:first-child {
+  font-weight: 600;
+  color: var(--dark-purple);
+  width: 60%;
+}
+
+.feature-table td:last-child {
+  text-align: right;
+  color: var(--gray);
+}
+
+.feature-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .email-title-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .model-predictions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .email-meta-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ensemble-probability {
+    flex-direction: column;
+  }
+  
+  .probability-meter {
+    width: 100%;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Emotional Features Section */
+.emotional-features-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.emotional-features-section h3 {
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.emotional-features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.emotional-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emotion-name {
+  width: 100px;
+  font-weight: 600;
+  color: var(--dark-purple);
+  font-size: 14px;
+}
+
+.emotion-bar-container {
+  flex: 1;
+  height: 24px;
+  background-color: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.emotion-bar {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}
+
+.emotion-value {
+  width: 60px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* Sentiment Summary */
+.sentiment-summary {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.sentiment-summary h4 {
+  color: var(--primary-purple);
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.sentiment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.sentiment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.sentiment-item span:first-child {
+  color: var(--dark-purple);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.sentiment-item span:last-child {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sentiment-item .positive {
+  color: #28a745;
+}
+
+.sentiment-item .negative {
+  color: #dc3545;
+}
+
+/* Emotion bar colors */
+.emotion-bar[style*="Anger"] { background-color: #dc3545; }
+.emotion-bar[style*="Fear"] { background-color: #6f42c1; }
+.emotion-bar[style*="Joy"] { background-color: #ffc107; }
+.emotion-bar[style*="Sadness"] { background-color: #17a2b8; }
+.emotion-bar[style*="Surprise"] { background-color: #fd7e14; }
+.emotion-bar[style*="Trust"] { background-color: #28a745; }
+.emotion-bar[style*="Love"] { background-color: #e83e8c; }
+
+/* Add to EmailDetail.css */
+
+/* Emotional Features Section */
+.emotional-features-section {
+  margin-top: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.emotional-features-section h3 {
+  color: var(--primary-purple, #6a1b9a);
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  border-left: 5px solid var(--primary-purple, #6a1b9a);
+  padding-left: 15px;
+}
+
+.emotional-features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.emotional-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 0;
+}
+
+.emotion-name {
+  width: 100px;
+  font-weight: 600;
+  color: var(--dark-purple, #38006b);
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.emotion-bar-container {
+  flex: 1;
+  height: 24px;
+  background-color: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.emotion-bar {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 0.5s ease;
+  background: linear-gradient(90deg, #9c4dcc, #6a1b9a);
+}
+
+.emotion-value {
+  width: 70px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--gray, #6c757d);
+  font-size: 14px;
+}
+
+/* Sentiment Summary - FIXED LAYOUT */
+.sentiment-summary {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sentiment-summary h4 {
+  color: var(--primary-purple, #6a1b9a);
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Metrics Grid - Fixed layout for the top row */
+.sentiment-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.metric-label {
+  font-size: 13px;
+  color: var(--gray, #6c757d);
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-purple, #38006b);
+}
+
+.metric-value.positive {
+  color: #28a745;
+}
+
+.metric-value.negative {
+  color: #dc3545;
+}
+
+/* Sentiment Breakdown - Fixed table layout */
+.sentiment-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.sentiment-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sentiment-row:last-child {
+  border-bottom: none;
+}
+
+.sentiment-label {
+  width: 80px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-purple, #38006b);
+}
+
+.sentiment-label.negative { color: #dc3545; }
+.sentiment-label.neutral { color: #6c757d; }
+.sentiment-label.positive { color: #28a745; }
+
+.sentiment-bar-track {
+  flex: 2;
+  height: 24px;
+  background-color: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sentiment-bar {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 0.5s ease;
+}
+
+.sentiment-bar.negative-bar { background: linear-gradient(90deg, #dc3545, #ff6b6b); }
+.sentiment-bar.neutral-bar { background: linear-gradient(90deg, #6c757d, #adb5bd); }
+.sentiment-bar.positive-bar { background: linear-gradient(90deg, #28a745, #51cf66); }
+
+.sentiment-percentage {
+  width: 70px;
+  font-weight: 600;
+  color: var(--gray, #6c757d);
+  text-align: right;
+  font-size: 14px;
+}
+
+.sentiment-value {
+  width: 60px;
+  font-weight: 500;
+  color: var(--dark-purple, #38006b);
+  text-align: right;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sentiment-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .emotional-feature-item {
+    flex-wrap: wrap;
+  }
+  
+  .emotion-name {
+    width: 80px;
+  }
+  
+  .sentiment-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .sentiment-label {
+    width: 70px;
+  }
+  
+  .sentiment-bar-track {
+    flex: 1;
+    min-width: 150px;
+  }
+}

@@ -1,0 +1,208 @@
+.loading-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a1b9a 0%, #9c4dcc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loading-card {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading-title {
+  color: #6a1b9a;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #6a1b9a;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-status {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 20px;
+  min-height: 27px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6a1b9a, #9c4dcc);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.progress-text {
+  color: #6a1b9a;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.emails-count {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.loading-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.step.completed {
+  opacity: 1;
+}
+
+.step.completed .step-number {
+  background: #6a1b9a;
+  color: white;
+  border-color: #6a1b9a;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.step span {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.step.completed span {
+  color: #6a1b9a;
+  font-weight: 500;
+}
+
+.error-message {
+  text-align: center;
+}
+
+.error-message p {
+  color: #d32f2f;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #ffebee;
+  border-radius: 8px;
+}
+
+.error-message button {
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Pulse animation for active step */
+.step:not(.completed):first-of-type .step-number {
+  animation: stepPulse 1.5s infinite;
+}
+
+@keyframes stepPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(106, 27, 154, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(106, 27, 154, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(106, 27, 154, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .loading-card {
+    padding: 30px 20px;
+  }
+  
+  .loading-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
