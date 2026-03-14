@@ -1,0 +1,235 @@
+/* =============================================
+// frontend/src/App.css
+// ============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-purple: #6a1b9a;
+  --light-purple: #9c4dcc;
+  --dark-purple: #38006b;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --gray: #6c757d;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-purple);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--light-purple);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--primary-purple);
+  border: 1px solid var(--primary-purple);
+}
+
+.btn-secondary:hover {
+  background-color: var(--light-purple);
+  color: var(--white);
+}
+
+.risk-LOW {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.risk-MEDIUM {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+.risk-HIGH {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.agreement-ALL_AGREE_THREAT,
+.agreement-ALL_AGREE_SAFE {
+  color: var(--success);
+}
+
+.agreement-MAJORITY_THREAT,
+.agreement-MAJORITY_SAFE {
+  color: var(--warning);
+}
+
+.agreement-SPLIT {
+  color: var(--danger);
+}
+
+.navbar {
+  background: var(--white);
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-purple);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar-menu a {
+  color: var(--dark-purple);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-menu a:hover {
+  color: var(--primary-purple);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--gray);
+}
+
+.error {
+  background-color: #ffebee;
+  color: var(--danger);
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Add to frontend/src/App.css */
+.auth-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6a1b9a 0%, #9c4dcc 100%);
+  color: white;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  border: none !important;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-line {
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+.skeleton-badge {
+  height: 24px;
+  background: #e0e0e0;
+  border-radius: 12px;
+}
+
+.skeleton-vote {
+  width: 40px;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 5px;
+}
